@@ -13,4 +13,268 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font);
+  font-variation-settings: var(--main-font-weight-regular);
+  background-image: var(--main-gradient);
+  background-attachment: fixed;
+  font-size: var(--main-font-size);
+  
+}
+
+.other-general-settings {
+  margin: 0 auto;
+  max-inline-size: var(--main-inline-size);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 2px solid currentColor;
+  margin-block-start: 100px;
+  gap: 20px;
+  min-block-size: var(--main-block-size);
+  font-family: var(--accent-font);
+  margin-block-end: 98px;
+}
+
+.main {
+  padding-block-end: 100px;
+}
+
+.logo-title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.logo-subtitle {
+  font-size: clamp(1.4375rem, 1.6356rem + -0.8451vw, 0.875rem);
+  line-height: 1;
+}
+
+.card-list {
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+}
+
+.card {
+  background-color: #fff;
+  border: 2px solid currentColor;
+  overflow: hidden;
+}
+
+.card__header {
+  padding: 4px 10px;
+  border-block-end: 2px solid currentColor;
+}
+
+.card__title {
+  font-size: inherit;
+  line-height: 1;
+  font-weight: var(--main-font-weight-bold);
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.card__label {
+  position: absolute;
+  inset-inline-end: 25px;
+  inset-block-start: 25px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  mix-blend-mode: hard-light;
+  -webkit-text-stroke: 1px #fff;
+  opacity: 0.5;
+}
+
+.card__img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  min-height: 696px;
+  max-height: 696px;
+}
+
+.gray {
+  filter: grayscale(100%);
+}
+
+.negative {
+  filter: invert(100%)
+}
+
+.invert {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.pink {
+  filter: sepia(1) hue-rotate(300deg) saturate(2) opacity(0.7);
+}
+
+.black {
+  filter: grayscale(100%) contrast(120%) brightness(90%);
+}
+
+.blur {
+  filter: blur(10px);
+}
+
+.multy {
+  filter: hue-rotate(235deg) blur(1px) grayscale(.3);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px;
+}
+
+.card__footer {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 12px;
+  padding: 0 25px 25px 25px;
+}
+
+.card__like-button {
+  block-size: 40px;
+  min-inline-size: 130px;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid currentColor;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: 400;
+  transition: box-shadow .3s ease;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.card__icon-button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid currentColor;
+}
+
+.button__text,
+.button-icon {
+  color: #fff;
+  mix-blend-mode: difference;
+}
+
+.button::before {
+  position: absolute;
+  content: '';
+  inset: 0;
+  background-color: currentColor;
+  transition: transform .5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+  inline-size: 100%;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button:focus,
+.card__icon-button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px currentColor;
+}
+
+.button-save {
+  block-size: 55px;
+  padding: 15px 20px;
+  gap: 8px;
+  margin: 50px auto auto auto;
+}
+
+.button-icon {
+  block-size: 21px;
+}
+
+.modal {
+  padding: 30px;
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-modal {
+  block-size: 39px;
+  flex-shrink: 0;
+}
+
+.modal-container p {
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: var(--accent-font);
+  max-width: 234px;
+}
+
+.button-modal {
+  margin-top: 30px;
+  inline-size: 100%;
+  block-size: 38px;
+}
+
+@media (width <= 375px) {
+  .header {
+    margin-block-end: 100px;
+  }
+
+  .modal {
+    padding: 30px 40px;
+    min-inline-size: 341px;
+  }
+
+  .button-save {
+    block-size: 84px;
+    flex-direction: column;
+  }
+
+  .button-icon {
+    block-size: 28px;
+  }
+}
+
+@supports ((-webkit-text-stroke: 1px #fff;) or (text-stroke: 1px #fff)) {
+  .card__label {
+    text-stroke: 1px #fff;
+  }
 }
