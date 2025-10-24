@@ -273,8 +273,9 @@
   }
 }
 
-@supports ((-webkit-text-stroke: 1px #fff;) or (text-stroke: 1px #fff)) {
+@supports (-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff) {
   .card__label {
+    -webkit-text-stroke: 1px #fff;
     text-stroke: 1px #fff;
   }
 }
