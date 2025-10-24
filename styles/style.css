@@ -248,7 +248,7 @@
 }
 
 .button-modal {
-  margin-top: 30px;
+  margin-block-start: 30px;
   inline-size: 100%;
   block-size: 38px;
 }
