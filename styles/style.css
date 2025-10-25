@@ -36,7 +36,7 @@
   border: 2px solid currentColor;
   font-family: var(--accent-font);
   background-color: #fff;
-  min-block-size: var(--main-block-size);
+  padding-block: clamp(120px, 120px + 10 * (100vw - 375px) / 1065, 130px);
 }
 
 .main {
@@ -50,8 +50,9 @@
 }
 
 .logo-subtitle {
-  font-size: clamp(1.4375rem, 1.6356rem + -0.8451vw, 0.875rem);
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   line-height: 1;
+  text-transform: uppercase;
 }
 
 .card-list {
@@ -74,7 +75,7 @@
 .card__title {
   font-variation-settings: "wght" var(--main-font-weight-bold);
   font-size: inherit;
-  line-height: 1;
+  line-height: 1.25;
 }
 
 .image-container {
@@ -92,7 +93,7 @@
   inset-inline-end: 25px;
   inset-block-start: 25px;
   mix-blend-mode: hard-light;
-  -webkit-text-stroke: 1px #fff;
+  text-shadow: 0 0 1px #fff;
 }
 
 .card__img {
@@ -252,6 +253,10 @@
   block-size: 38px;
 }
 
+.button-modal .button__text {
+  text-transform: uppercase;
+}
+
 @media (width <= 375px) {
   .header {
     margin-block-end: 100px;
@@ -270,10 +275,16 @@
   .button-icon {
     block-size: 28px;
   }
+
+  .card__img {
+    min-height: 371px;
+    max-height: 371px;
+  }
 }
 
 @supports (-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff) {
   .card__label {
+    text-shadow: none;
     -webkit-text-stroke: 1px #fff;
     text-stroke: 1px #fff;
   }
